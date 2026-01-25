@@ -7,10 +7,6 @@ from .shared import PAUSE_STATE
 
 # --- NODE 1: STANDARD PAUSABLE SAMPLER ---
 class PSampler:
-    """
-    The Pausable Sampler (Standard).
-    Features: Pause & Resume. In-Memory Only.
-    """
     @classmethod
     def INPUT_TYPES(s):
         return {
@@ -30,7 +26,7 @@ class PSampler:
 
     RETURN_TYPES = ("LATENT",)
     FUNCTION = "sample"
-    CATEGORY = "Pausable/Engine"
+    CATEGORY = "ComfyPause"
 
     def sample(self, model, seed, steps, cfg, sampler_name, scheduler, positive, negative, latent_image, denoise):
         
@@ -73,10 +69,6 @@ class PSampler:
 
 # --- NODE 2: ADVANCED PAUSABLE SAMPLER ---
 class PSamplerAdvanced:
-    """
-    The Pausable Sampler (Advanced).
-    Exposes manual control over noise and steps.
-    """
     @classmethod
     def INPUT_TYPES(s):
         return {
@@ -99,7 +91,7 @@ class PSamplerAdvanced:
 
     RETURN_TYPES = ("LATENT",)
     FUNCTION = "sample"
-    CATEGORY = "Pausable/Engine"
+    CATEGORY = "ComfyPause"
 
     def sample(self, model, add_noise, noise_seed, steps, cfg, sampler_name, scheduler, positive, negative, latent_image, start_at_step, end_at_step, return_with_leftover_noise):
         

@@ -1,6 +1,6 @@
 import server
 from aiohttp import web
-from .pause_nodes import PSampler, PSamplerAdvanced
+from .nodes import PSampler, PSamplerAdvanced
 from .shared import PAUSE_STATE, state_lock
 
 # API Route
@@ -22,8 +22,8 @@ NODE_CLASS_MAPPINGS = {
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
-    "PSampler": "⏸️ Pausable Sampler",
-    "PSamplerAdvanced": "⏸️ Pausable Sampler (Advanced)"
+    "PSampler": "⏸️ PSampler",
+    "PSamplerAdvanced": "⏸️ PSampler (Advanced)"
 }
 
 WEB_DIRECTORY = "./js"
