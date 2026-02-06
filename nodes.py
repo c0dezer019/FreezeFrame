@@ -26,7 +26,7 @@ class PSampler:
 
     RETURN_TYPES = ("LATENT",)
     FUNCTION = "sample"
-    CATEGORY = "ComfyPause"
+    CATEGORY = "FreezeFrame"
 
     def sample(self, model, seed, steps, cfg, sampler_name, scheduler, positive, negative, latent_image, denoise):
         
@@ -91,7 +91,7 @@ class PSamplerAdvanced:
 
     RETURN_TYPES = ("LATENT",)
     FUNCTION = "sample"
-    CATEGORY = "ComfyPause"
+    CATEGORY = "FreezeFrame"
 
     def sample(self, model, add_noise, noise_seed, steps, cfg, sampler_name, scheduler, positive, negative, latent_image, start_at_step, end_at_step, return_with_leftover_noise):
         
