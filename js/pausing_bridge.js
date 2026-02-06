@@ -4,8 +4,10 @@ import { api } from "../../scripts/api.js";
 app.registerExtension({
     name: "Comfy.Pause.Control",
     async beforeRegisterNodeDef(nodeType, nodeData, app) {
-        // Target both Standard and Advanced nodes
-        if (nodeData.name === "PSampler" || nodeData.name === "PSamplerAdvanced") {
+        // Target Standard, Advanced, and Custom nodes
+        const validNodes = ["PSampler", "PSamplerAdvanced", "PSamplerCustom", "PSamplerCustomAdvanced"];
+        
+        if (validNodes.includes(nodeData.name)) {
             const onNodeCreated = nodeType.prototype.onNodeCreated;
             nodeType.prototype.onNodeCreated = function () {
                 const r = onNodeCreated ? onNodeCreated.apply(this, arguments) : undefined;
@@ -23,7 +25,10 @@ app.registerExtension({
                     cfgWidget.options.precision = 1;
                 }
 
-                this.setSize([300, nodeData.name === "PSamplerAdvanced" ? 440 : 280]);
+                // Adjust size slightly based on node type
+                const isAdvanced = nodeData.name.includes("Advanced");
+                this.setSize([300, isAdvanced ? 440 : 280]);
+                
                 return r;
             };
         }
