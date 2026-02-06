@@ -6,6 +6,9 @@ Useful for inspecting intermediate steps, managing GPU/CPU heat, or simply halti
 
 This is a rebuild of the KSampler and Advanced KSampler and simply inserts a listener, signaler, and a trigger into the loop, effectively creating a "trap." There is a running loop that loops back around after each step is performed. all this does is tell the loop to wait while the state is "paused."
 
+<img width="485" height="515" alt="image" src="https://github.com/user-attachments/assets/e51cfd23-1c37-4132-ac53-88f43d8f9f27" />
+
+
 ---
 
 ## ✨ Features
