@@ -1,5 +1,5 @@
 [project]
-name = "freezeframe"
+name = "FreezeFrame"
 description = "Modifed Sampler nodes that allow you to pause/resume generations. For those with older hardware running in CPU mode or old GPUs. Useful for managing thermals."
 version = "1.1.0"
 license = { file = "LICENSE" }
