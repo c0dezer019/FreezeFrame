@@ -29,7 +29,7 @@ class PSampler:
 
     RETURN_TYPES = ("LATENT",)
     FUNCTION = "sample"
-    CATEGORY = "ComfyPause"
+    CATEGORY = "sampling/FreezeFrame"
 
     def sample(self, model, seed, steps, cfg, sampler_name, scheduler, positive, negative, latent_image, denoise):
         latent_samples = latent_image["samples"]
@@ -93,7 +93,7 @@ class PSamplerAdvanced:
 
     RETURN_TYPES = ("LATENT",)
     FUNCTION = "sample"
-    CATEGORY = "ComfyPause"
+    CATEGORY = "sampling/FreezeFrame"
 
     def sample(self, model, add_noise, noise_seed, steps, cfg, sampler_name, scheduler, positive, negative, latent_image, start_at_step, end_at_step, return_with_leftover_noise):
         force_full_denoise = (return_with_leftover_noise == "disable")
@@ -160,7 +160,7 @@ class PSamplerCustom:
     RETURN_TYPES = ("LATENT", "LATENT")
     RETURN_NAMES = ("output", "denoised_output")
     FUNCTION = "sample"
-    CATEGORY = "ComfyPause"
+    CATEGORY = "sampling/FreezeFrame"
 
     def sample(self, model, add_noise, noise_seed, cfg, positive, negative, sampler, sigmas, latent_image):
         # 1. Setup Latent & Fix Empty Channels
@@ -244,7 +244,7 @@ class PSamplerCustomAdvanced:
     RETURN_TYPES = ("LATENT", "LATENT")
     RETURN_NAMES = ("output", "denoised_output")
     FUNCTION = "sample"
-    CATEGORY = "ComfyPause"
+    CATEGORY = "sampling/FreezeFrame"
 
     def sample(self, noise, guider, sampler, sigmas, latent_image):
         # 1. Setup Latent & Fix Empty Channels

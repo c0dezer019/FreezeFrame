@@ -1,4 +1,4 @@
-# ⏸️ ComfyUI-Pause (Pausable Sampler)
+# ⏸️ FreezeFrame (Pausable Sampler)
 
 A custom sampler node for [ComfyUI](https://github.com/comfyanonymous/ComfyUI) that allows you to **Pause** generation mid-cycle and **Resume** it.
 
